@@ -8,14 +8,14 @@
     int longestSubsequence(int n, int a[])
     {
         vector<int> take(n, 1); 
-        vector<int> not_take(n, 1); 
+        vector<int> not_take(n, 0); 
     
         for (int i = 1; i < n; i++) {
             for (int j = 0; j < i; j++) {
                 if (a[i] > a[j]) {
                     take[i] = max(take[i], take[j] + 1); 
                 } else {
-                    not_take[i] = max(not_take[i], not_take[j]); 
+                    not_take[i] = max(not_take[i], max(not_take[j],take[j])); 
                 }
             }
         }
