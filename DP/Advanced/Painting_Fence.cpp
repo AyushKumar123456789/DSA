@@ -8,7 +8,10 @@ Approach , two conditions
 IF there are k colors and n fences
 n=1 -> same = 0 and different  = k
 n=2 -> same = k and different = k*(k-1)
-n=3 -> same = k*(k-1) and different = k*(k-1)*(k-1) // Here you see different = (precious total)*(k-1) and same = previous different
+n=3 -> same = k*(k-1) and different = k*(k-1)*(k-1) // Here you see different = (previous total)*(k-1) and same = previous different
+
+SO, same[i] represent number of wanys to paint fence upto index i such that i and i-1 have same colors,
+    AND diff[i] represent number of wanys to paint fence upto index i such that i and i-1 have different colors
 
 In general : 
 total[i] = same[i] + diff[i]

@@ -25,3 +25,7 @@ Iterative -> This approach is called **bottom-up**, Bottom up is exactly the opp
 
     Base Cases: dp[0][j] where 0<=j<=sum
     So, Number of ways to make a sum of j using only index 0 coins.
+### Steps to write DP solution in interview
+1. Explain what DP represent
+2. write how DP is releated to previous DP and write it in comment
+3. Think of base case and when it is needed and write it before iteration
