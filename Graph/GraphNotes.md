@@ -309,6 +309,8 @@ O(V^2\*logV) -> time complexity in worst case of dense graph.
 
 ## TOPOSORT CODE :
 
+### 1. Using simple DFS and Reversing andy of its DFS vectors , But you need to be sure that Cycle is not present in the graph.
+
 ```
 
     void dfs(vector<int>adj[],vector<int>&vis,vector<int>&topo_sort,int node)
@@ -340,13 +342,351 @@ O(V^2\*logV) -> time complexity in worst case of dense graph.
 
 ```
 
+### 2. BFS TOPOSORT : (Using Indegree)
+
+```
+
+    vector<int> topoSort(int V, vector<int> adj[]) {
+        vector<int>indegree(V,0);
+        for(int i=0;i<V;i++)
+        {
+            for(auto ch:adj[i])
+            {
+                indegree[ch]++;
+            }
+        }
+        queue<int>Q;
+        for(int i=0;i<V;i++)
+        {
+            if(indegree[i]==0)
+            {
+                Q.push(i);
+            }
+        }
+        vector<int>topo;
+        while(!Q.empty())
+        {
+            int node = Q.front();
+            topo.push_back(node);
+            Q.pop();
+            for(auto ch:adj[node])
+            {
+                indegree[ch]--;
+                if(indegree[ch]==0)
+                {
+                    Q.push(ch);
+                }
+            }
+        }
+        return topo;
+    }
+
+```
+
+## DSU (Disjoint set union) :
+
+### What is a Disjoint set data structure?
+
+- ### Two sets are called disjoint sets if they don’t have any element in common, the intersection of sets is a null set.
+
+### What it is used for ?
+
+- ### Consider a scenario where you have to find that two nodes belong to same components or not , DSU does it in O(1)
+
+### DSU functoin provide :
+
+### 1. Union : It is used to merge two sets.
+
+### 2. Find : It is used to find the parent/Representative of the set.
+
+### 3. MakeSet : It is used to create a set of a single element.
+
+### DSU : Partitioning the individuals into different sets according to the groups in which they fall. This method is known as a Disjoint set Union which maintains a collection of Disjoint sets and each set is represented by one of its members call ultimate parent.
+
+### Data Structure used for DSU :
+
+1. ### Array : Parent[] : It is used to store the parent of the node.
+2. ### Array : Rank[] : It is used to store the height of the tree.
+   ### OR
+3. ### Array : Size[] : It is used to store the size of the tree.
+4. ### For DSU implementation, we need to create Three functions : Find and Union(Rank/size) and One for initialization of the parent of every node to itself and Size of Rank/Size vector
+
+### Find opeartion :
+
+```
+        int findUpar(int node){
+        if(node == parent[node])
+        {
+            return node;
+        }
+        return parent[node] = findUpar(parent[node]);//path compression
+
+    }
+        Time Complexity: O(log n) on average per call because of path compression without it O(n).
+```
+
+### Union operation (Two Ways) :
+
+It is used to merge two sets which is nothind but two trees and make them one tree we have to just make the parent of every node of one tree to the parent of the other tree , So there are two ways to decide which tree come under other or which tree become parent of other tree.
+
+- ### Union by Rank :
+
+  Here rank[i] is the height of the tree representing the set containing i.
+  If the rank of left is less than the rank of right, then it’s best to move left under right, because that won’t change the rank of right (while moving right under left would increase the height). In the same way, if the rank of right is less than the rank of left, then we should move right under left.
+  If the ranks are equal, it doesn’t matter which tree goes under the other, but the rank of the result will always be one greater than the rank of the trees.
+
+  ```
+   void unionByRank(int u,int v){
+        int ulp_u = findUpar(u);
+        int ulp_v = findUpar(v);
+        if(ulp_u == ulp_v)return;
+        if(Rank[ulp_u]<Rank[ulp_v]){
+           parent[ulp_u] = ulp_v;
+        }
+        else if(Rank[ulp_v]<Rank[ulp_u]){
+            parent[ulp_v] = ulp_u;
+        }
+        else{
+            parent[ulp_v] = ulp_u;
+            Rank[ulp_u]++;
+        }
+    }
+    Time Complexity: O(alpha(n)) on average per call because of path compression without it O(n).
+  ```
+
+- ### Union by Size :
+
+  If i is a representative of a set, size[i] is the number of the elements in the tree representing the set.
+  If the size of left is less than the size of right, then it’s best to move left under right and increase size of right by size of left. In the same way, if the size of right is less than the size of left, then we should move right under left. and increase size of left by size of right.
+  If the sizes are equal, it doesn’t matter which tree goes under the other.
+
+  ```
+  void unionBySize(int u,int v){
+  int ulp_u = findUpar(u);
+  int ulp_v = findUpar(v);
+  if(ulp_u == ulp_v)return;
+  if(Size[ulp_u]<Size[ulp_v]){
+  parent[ulp_u] = ulp_v;
+  Size[ulp_v] += Size[ulp_u];
+  }
+  else {
+  parent[ulp_v] = ulp_u;
+  Size[ulp_u] += Size[ulp_v];
+  }
+
+      }
+      Time complexity: O(log n) without Path Compression.
+      Time complexity: O(alpha(n)) with Path Compression.
+  ```
+
+### Complete CODE :
+
+```
+    vector<int>Rank,parent;
+
+    vector<int>Size;
+    class DisjointSet{
+    public:
+    void print_rank(){
+    for(int i=1;i<Size.size();i++)
+    {
+    cout<<Size[i]<<" ";
+    }
+    cout<<endl;
+    }
+    DisjointSet(int n){
+    Rank.resize(n+1,0);
+    Size.resize(n+1,1);
+    parent.resize(n+1,0);
+    for(int i=0;i<=n;i++){
+    parent[i] = i;
+    }
+    }
+
+
+    int findUpar(int node){
+    if(node == parent[node])
+    {
+    return node;
+    }
+    return parent[node] = findUpar(parent[node]);//path compression
+
+    }
+
+        void unionByRank(int u,int v){
+            int ulp_u = findUpar(u);
+            int ulp_v = findUpar(v);
+            if(ulp_u == ulp_v)return;
+            if(Rank[ulp_u]<Rank[ulp_v]){
+               parent[ulp_u] = ulp_v;
+            }
+            else if(Rank[ulp_v]<Rank[ulp_u]){
+                parent[ulp_v] = ulp_u;
+            }
+            else{
+                parent[ulp_v] = ulp_u;
+                Rank[ulp_u]++;
+            }
+        }
+
+    void unionBySize(int u,int v){
+        int ulp_u = findUpar(u);
+        int ulp_v = findUpar(v);
+        if(ulp_u == ulp_v)return;
+        if(Size[ulp_u]<Size[ulp_v]){
+           parent[ulp_u] = ulp_v;
+           Size[ulp_v] += Size[ulp_u];
+        }
+        else {
+            parent[ulp_v] = ulp_u;
+            Size[ulp_u] += Size[ulp_v];
+        }
+
+    }
+
+};
+```
+
+# MST (Minimum Spanning Tree) , Two Algorithms :
+
+- ## Kruskal Algorithm : (Uses DSU CONCEPT)
+
+### Steps :
+
+- ### Create a vector pair<int,pair<int,int>> = {weight,{node1,node2}}
+- ### Then sort it according to the weight in ascending order.
+- ### Then iterate through the sorted vector and Do union of the nodes if they are not in the same set and not if they are not in same set (i.e if(parent[node1]!=parent[node2]) then do union of the nodes and add the weight to the answer.
+
+```
+// C++ program for the above approach
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// DSU data structure
+// path compression + rank by union
+class DSU {
+	int* parent;
+	int* rank;
+
+public:
+	DSU(int n)
+	{
+		parent = new int[n];
+		rank = new int[n];
+
+		for (int i = 0; i < n; i++) {
+			parent[i] = -1;
+			rank[i] = 1;
+		}
+	}
+
+	// Find function
+	int find(int i)
+	{
+		if (parent[i] == -1)
+			return i;
+
+		return parent[i] = find(parent[i]);
+	}
+
+	// Union function
+	void unite(int x, int y)
+	{
+		int s1 = find(x);
+		int s2 = find(y);
+
+		if (s1 != s2) {
+			if (rank[s1] < rank[s2]) {
+				parent[s1] = s2;
+			}
+			else if (rank[s1] > rank[s2]) {
+				parent[s2] = s1;
+			}
+			else {
+				parent[s2] = s1;
+				rank[s1] += 1;
+			}
+		}
+	}
+};
+
+class Graph {
+	vector<vector<int> > edgelist;
+	int V;
+
+public:
+	Graph(int V) { this->V = V; }
+
+	// Function to add edge in a graph
+	void addEdge(int x, int y, int w)
+	{
+		edgelist.push_back({ w, x, y });
+	}
+
+	void kruskals_mst()
+	{
+		// Sort all edges
+		sort(edgelist.begin(), edgelist.end());
+
+		// Initialize the DSU
+		DSU s(V);
+		int ans = 0;
+		cout << "Following are the edges in the "
+				"constructed MST"
+			<< endl;
+		for (auto edge : edgelist) {
+			int w = edge[0];
+			int x = edge[1];
+			int y = edge[2];
+
+			// Take this edge in MST if it does
+			// not forms a cycle
+			if (s.find(x) != s.find(y)) {
+				s.unite(x, y);
+				ans += w;
+				cout << x << " -- " << y << " == " << w
+					<< endl;
+			}
+		}
+		cout << "Minimum Cost Spanning Tree: " << ans;
+	}
+};
+
+// Driver code
+int main()
+{
+	Graph g(4);
+	g.addEdge(0, 1, 10);
+	g.addEdge(1, 3, 15);
+	g.addEdge(2, 3, 4);
+	g.addEdge(2, 0, 6);
+	g.addEdge(0, 3, 5);
+
+	// Function call
+	g.kruskals_mst();
+
+	return 0;
+}
+
+```
+
+### Complexity Analysis :
+
+- Time Complexity: O(E _ logE) or O(E _ logV)
+
+  1. Sorting of edges takes O(E \* logE) time.
+  2. After sorting, we iterate through all edges and apply the find-union algorithm. The find and union operations can take at most O(logV) time.
+  3. So overall complexity is O(E _ logE + E _ logV) time.
+     The value of E can be at most O(V2), so O(logV) and O(logE) are the same. Therefore, the overall time complexity is O(E * logE) or O(E*logV)
+
+- Auxiliary Space: O(V + E), where V is the number of vertices and E is the number of edges in the graph.
+
+- ## Prim Algorithm :
+
 ## Bellman Ford Algorithm : (LEFT)
 
 ## Floyd Warshall Algorithm : (LEFT)
-
-## Kruskal Algorithm : (LEFT)
-
-## Prim Algorithm : (LEFT)
 
 ## Tarjan Algorithm : (LEFT)
 
@@ -638,6 +978,10 @@ mergeSort(arr,mid+1,right);
 merge(arr,left,mid,mid+1,right);
 }
 }
+
+```
+
+```
 
 ```
 
