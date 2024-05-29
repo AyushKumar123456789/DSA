@@ -255,30 +255,9 @@ else if(x.second!=ch){
 
 ---
 
-# Seive of Eratosthenes :
-
-It is used to find that given number is prime or not , (and number in range of 0 to 1e6) it is one time computation method so it is helpful for multiple query :
-
-```
-
-Vector<int>prime(1e6,1);
-prime[0]=prime[1]=0;
-for(int i=2;i*i<=1e6;i++){
-if(prime[i]==1)
-{
-for (int multiple = i * i; multiple <= 1e6; multiple += i) {
-prime[multiple] = 0;
-}
-}
-}
-
-Time Complexity=> O(xlog(log(sqrt(x)))) = xlog(½\*log(x)) = O(xlog(log(x)))
-
-```
-
 ## TOPOSORT CODE :
 
-### 1. Using simple DFS and Reversing andy of its DFS vectors , But you need to be sure that Cycle is not present in the graph.
+### 1. Using simple DFS and Reversing any of its DFS vectors , But you need to be sure that Cycle is not present in the graph AND It also work if you not start from root.
 
 ```
 
@@ -527,7 +506,7 @@ It is used to merge two sets which is nothind but two trees and make them one tr
 
 - ### Create a vector pair<int,pair<int,int>> = {weight,{node1,node2}}
 - ### Then sort it according to the weight in ascending order.
-- ### Then iterate through the sorted vector and Do union of the nodes if they are not in the same set and not if they are not in same set (i.e if(parent[node1]!=parent[node2]) then do union of the nodes and add the weight to the answer.
+- ### Then iterate through the sorted vector and Do union of the nodes if they are not in the same set and not if they are in same set (i.e if(parent[node1]!=parent[node2]) then do union of the nodes and add the weight to the answer.
 
 ```
 // C++ program for the above approach
@@ -963,6 +942,10 @@ for (int k = 0; k < n; k++)
 
 ## Strongly Connected Component / Kosaraju Algorithm , (Directed Graph) :
 
+![Two Strongly Connected Component Connected in only one direction , if connected in both direction then whole graph become SCC](image.png)
+
+Two Strongly Connected Component Connected in only one direction , if connected in both direction then whole graph become SCC
+
 - ### SCC is a group of nodes in a directed graph that are reachable from every other node in the group.
 - ### Kosaraju Algorithm is used to find No. SCC in a directed graph.
 - ### Steps :
@@ -970,6 +953,8 @@ for (int k = 0; k < n; k++)
 1. Run DFS on the graph and store the order of nodes in a stack (stack conatains Toposort).
 2. Reverse the graph.
 3. Run DFS on the reversed graph and pop the nodes from the stack and No. of time you do dfs is the No. of SCC.
+
+#### Logic : We don't do toposort of graph exactly , toposort is not possible because of presence of cycle in the graph , We do it to find the one element of scc before the other element of second scc because if you consider one scc as a single node then you can see that toposort is possible becuase interconnection between SCC's in one directional.
 
 #### Two different dfs are used for step 1 and 3.
 
@@ -1059,6 +1044,8 @@ Logic :
 Why ? Becuase Every node has M choices to color and we have N nodes.
 Space complexity : O(N) + O(N) because we are using a color array of size N and stack space of size N (recursion stack space).
 
+#### Time Complexity Calculation : Total Number of nodes = (M^0 + M^1 + M^2 + M^3 + M^4 ....) = (M^N - 1)/(M-1) = O(M^N)
+
 ```
   #include <bits/stdc++.h>
 using namespace std;
@@ -1109,7 +1096,7 @@ bool graphColoring(bool graph[101][101], int m, int n)
 }
 ```
 
-# Bipartite Graph : (Same For Two Clique Problem)
+# Bipartite Graph : (Same For Two Clique Problem) , For Undirected Graph
 
 - ## Graph which vertices can be partioned into two disjoint sets such that every edge connects a vertex from one set to another set , Or we can say that graph can be colored with two colors.
 

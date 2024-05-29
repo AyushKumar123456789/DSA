@@ -15,7 +15,6 @@ int longestSubsequence(int n, int a[])
 
     for (int i = 1; i < n; i++)
     {
-<<<<<<< HEAD
         for (int j = 0; j < i; j++)
         {
             if (a[i] > a[j])
@@ -25,18 +24,6 @@ int longestSubsequence(int n, int a[])
             else
             {
                 not_take[i] = max(not_take[i], not_take[j]);
-=======
-        vector<int> take(n, 1); 
-        vector<int> not_take(n, 0); 
-    
-        for (int i = 1; i < n; i++) {
-            for (int j = 0; j < i; j++) {
-                if (a[i] > a[j]) {
-                    take[i] = max(take[i], take[j] + 1); 
-                } else {
-                    not_take[i] = max(not_take[i], max(not_take[j],take[j])); 
-                }
->>>>>>> 5728df8869be95d589863a84cf29fad6032fad60
             }
         }
     }
@@ -69,10 +56,5 @@ int longestSubsequence(int n, int a[])
     return arr.size();
 }
 
-<<<<<<< HEAD
 // Time Complexity : O(NlogN)
 // Space Complexity : O(N)
-=======
-//Time Complexity : O(NlogN)
-//Space Complexity : O(N)
->>>>>>> 5728df8869be95d589863a84cf29fad6032fad60
