@@ -18,10 +18,6 @@ void insert(int data)
     head = temp;
 }
 
-/*
-Iterative Reverse
-*/
-
 void reverse()
 {
     Node *current = head;
@@ -41,16 +37,24 @@ void reverse()
 /*
 Reversing the linked list using recursion
 */
-Node *reverse(Node *head)
+
+bool detectLoop(Node *head)
 {
-    if (head == NULL || head->next == NULL)
-        return head;
+    Node *fast = head;
+    Node *slow = head;
+    while (fast != NULL && fast->next != NULL)
+    {
+        fast = fast->next->next;
+        slow = slow->next;
+        if (fast == slow)
+        {
+            break;
+        }
+    }
+    if (fast == NULL || fast->next == NULL)
+        return 0;
 
-    Node *rest = reverse(head->next);
-    head->next->next = head;
-    head->next = NULL;
-
-    return rest;
+    return fast == slow;
 }
 
 void print()
@@ -75,16 +79,10 @@ int main()
     insert(8);
     insert(9);
     insert(10);
-    cout << "Original Linked List: ";
-    print();
-    cout << endl;
-    reverse();
-    cout << "Reversed Linked List: ";
-    print();
-    cout << endl;
-    head = reverse(head);
-    cout << "Reversed Linked List using recursion: ";
-    print();
+    // cycle :
+    head->next->next->next->next->next = head->next;
+
+    cout << detectLoop(head) << endl;
 
     return 0;
 }
