@@ -30,6 +30,8 @@
 
 - [Diameter: The number of nodes on the longest path between two leaves in the tree.](/Binary%20Tree/Basics/4.%20Diameter.cpp)
 
+- [Balanced Tree: A tree is balanced if the height of the left and right subtrees of every node differ by at most 1.](/Binary%20Tree/Basics/12.%20Balance%20Check.cpp)
+
 ### Creating a Binary Tree
 
 ```cpp
@@ -100,33 +102,16 @@ int main(){
 
 ## Traverse a Binary Tree :
 
-### [1. Inorder Traversal : In this traversal, the nodes are recursively visited in this order: left, root, right.](/Binary%20Tree/Basics/5%20InorderTraversal.cpp)
+- ### [1. Inorder Traversal : In this traversal, the nodes are recursively visited in this order: left, root, right.](/Binary%20Tree/Basics/5%20InorderTraversal.cpp)
 
-- Example : Inorder traversal of 1 2 -1 4 -1 -1 3 -1 -1 is 4 2 1 3 is 4 2 1 3
+  - Example : Inorder traversal of 1 2 -1 4 -1 -1 3 -1 -1 is 4 2 1 3 is 4 2 1 3
 
-### 2. Preorder Traversal : In this traversal, the nodes are recursively visited in this order: root, left, right.
+- ### [2. Preorder Traversal : In this traversal, the nodes are recursively visited in this order: root, left, right.](/Binary%20Tree/Basics/6.%20Preorder.cpp)
 
-```cpp
-void PreorderTraversal(Node* root){
-    if(root == NULL){
-        return;
-    }
-    cout<<root->data<<" ";
-    PreorderTraversal(root->left);
-    PreorderTraversal(root->right);
-}
-```
+  - Example : Preorder traversal of 1 2 -1 4 -1 -1 3 -1 -1 is 1 2 4 3
 
-### 3. Postorder Traversal : In this traversal, the nodes are recursively visited in this order: left, right, root.
+- ### [3. Postorder Traversal : In this traversal, the nodes are recursively visited in this order: left, right, root.](/Binary%20Tree/Basics/7.%20PostOrder.cpp)
 
-```cpp
+  - Example : Postorder traversal of 1 2 -1 4 -1 -1 3 -1 -1 is 4 2 3 1
 
-void PostorderTraversal(Node* root){
-    if(root == NULL){
-        return;
-    }
-    PostorderTraversal(root->left);
-    PostorderTraversal(root->right);
-    cout<<root->data<<" ";
-}
-```
+  `Important : Postorder traversal is used to delete the tree , AND PostOrder Traversal is Reverse of PreOrder Traversal with only difference that right child is visited/appended before left child.`
