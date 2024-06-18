@@ -1,6 +1,8 @@
 /*
-1. Approach : Use Counting , Time Complexity: O(N) + O(N)
-2. 3 Pointers Approach, Time Complexity: O(N) , Space Complexity: O(1)
+Approach : Use Counting , Time Complexity: O(N) + O(N) (We have to traverse the array two times)
+Approach 2 : 3 Pointers Approach, Time Complexity: O(N) , Space Complexity: O(1)
+Logic Approach 2 : mid pura traverse krega or jo jis pointer k hai usko dedega , or while(mid<=h) -> equal mt bhulna because hoskta h , mid or h 0 pe ake mila ho to
+us 0 ko l pointer k pas phuchana hoga na
 */
 
 #include <bits/stdc++.h>

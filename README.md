@@ -20,7 +20,7 @@ layout:
 
 # README
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com/?font=Fira+Code&size=25&pause=1000&color=003285&background=FFD07600&width=501&lines=Algorithm+Library)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=30&pause=1000&random=false&width=550&lines=DSA+LIBRARY+BY+MartinKClark)](https://git.io/typing-svg)
 
 # Table of Content :
 
@@ -34,3 +34,5 @@ layout:
   - [GraphNotes](Graph/GraphNotes.md)
 - [Seive of Eratosthenes :](<Number Theory/Number Theory.md>)
 - [Binary Tree](Binary%20Tree/BinaryTree.md)
+- [Binary Search Tree](/Binary%20Search%20Tree/)
+- [Heap](Heap/Heap%20notes.md)
