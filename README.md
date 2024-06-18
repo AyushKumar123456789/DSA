@@ -34,5 +34,5 @@ layout:
   - [GraphNotes](Graph/GraphNotes.md)
 - [Seive of Eratosthenes :](<Number Theory/Number Theory.md>)
 - [Binary Tree](Binary%20Tree/BinaryTree.md)
-- [Binary Search Tree](/Binary%20Search%20Tree/)
-- [Heap](Heap/Heap%20notes.md)
+- [Binary Search Tree](/Binary%20Search%20Tree/BST_Notes.md)
+- [Heap](Heap/Heap_Notes.md)
