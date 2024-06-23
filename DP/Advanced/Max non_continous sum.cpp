@@ -89,4 +89,3 @@ int main()
     cout << FindMaxSum(arr, N);
     return 0;
 }
-// This approach is contributed by Debanjan

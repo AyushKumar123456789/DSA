@@ -94,4 +94,4 @@ int knapSack(int W, int wt[], int val[], int n)
 }
 
 // Time Complexity: O(N*W) where N is the number of items and W is the capacity of the knapsack.
-// Space Complexity: O(W) , We are using a 1D array ( O(W)).
+// Space Complexity: O(W) , We are using a 1D array O(W).

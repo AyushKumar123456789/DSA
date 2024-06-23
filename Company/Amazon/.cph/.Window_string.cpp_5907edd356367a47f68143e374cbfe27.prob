@@ -1,1 +1,0 @@
-{"name":"Local: Window_string","url":"e:\\C++ Roungh\\Company\\Amazon\\Window_string.cpp","tests":[{"id":1716526305563,"input":"adovecodebanc\nabc","output":"banc"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\C++ Roungh\\Company\\Amazon\\Window_string.cpp","group":"local","local":true}

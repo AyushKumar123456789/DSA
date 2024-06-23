@@ -1297,6 +1297,14 @@ bool isGraphBirpatite(vector<vector<int>> &edges) {
 
   - ## Travelling Salesman Problem :
 
+# Questions :
+
+### [Print All Path From A to B](/Graph/Print_All_Path/Print_all_path_from_a_to_b.cpp)
+
+### [Print All Hamiltonian Path](/Graph/Print_All_Path/Print_all_hamiltonian_path.cpp)
+
+### [Print All Hamiltonian Cycle](/Graph/Print_All_Path/Print_all_hamiltonian_cycle.cpp)
+
 ## Articulation Point : (LEFT)
 
 ## Maximum Bipartite Matching : (LEFT)
@@ -1316,40 +1324,6 @@ bool isGraphBirpatite(vector<vector<int>> &edges) {
 ## Aho Corasick Algorithm : (LEFT)
 
 ## Suffix Array : (LEFT)
-
-## Heap Code :
-
-### Heapify
-
-```
-
-void heapify(vector<int>&nums,int n,int i)
-{
-int left = 2*i+1;
-int right = 2*i+2;
-int largest = i;
-if(left<n && nums[largest]<nums[left])
-{
-largest = left;
-}
-if(right<n && nums[largest]<nums[right])
-{
-largest = right;
-}
-if(largest!=i)
-{
-swap(nums[largest],nums[i]);
-heapify(nums,n,largest); }}
-
-void buildHeap(int arr[],int n){
-for(int i=n/2;i>0;i--)
-{
-Heapify(arr,n,i);
-}
-}
-O(n) -> time complexity
-
-```
 
 ## TRIE : (Dictonary Code)
 

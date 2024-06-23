@@ -112,7 +112,6 @@ int editDistance(string s, string t)
 // Space Complexity: O(s.size()*t.size())
 
 // Some optimization can be done in space complexity by using 1D DP array instead of 2D DP array
-// Space optimzation k lie dusre tarike se bnana hoga index shift krke
 
 int editDistance(string s, string t)
 {
