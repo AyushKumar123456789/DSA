@@ -13,7 +13,7 @@
   - The right `subtree` of a node contains only nodes with keys greater than the node’s key.
   - The left and right `subtree` each must also be a binary search tree.
 
-- ### [Insertion in BST:](/Binary%20Search%20Tree/Basics/BST_creation.cpp)
+- ### [Insertion in BST:](/Binary%20Search%20Tree/Basics/1.BST_creation.cpp)
 
   - To insert a new node in BST, we need to follow the following steps:
     - Start from the root node and compare the key of the new node with the key of the current node.
@@ -24,7 +24,7 @@
 
 - ### ❗Important Property❗ `Inorder Traversal in BST gives the elements in sorted order.` So, Inorder successor of a node is the next node in the inorder traversal of the tree and it is the smallest node in the right subtree of the node.
 
-- ### [Deletion in BST:](/Binary%20Search%20Tree/Basics/3.%20Deletion._in_BST.cpp)
+- ### [Deletion in BST:](/Binary%20Search%20Tree/Basics/3.Deletion._in_BST.cpp)
 
   - To delete a node from BST, we need to follow the following steps:
 
@@ -39,7 +39,7 @@
       - If the node to be deleted has only one child, then copy the child to the node and delete the child.
       - If the node to be deleted has two children, then find the inorder successor or inorder predecessor of the node. Copy the value of the inorder successor or inorder predecessor to the node and delete the inorder successor or inorder predecessor.
 
-- ### [Searching in BST:](/Binary%20Search%20Tree/Basics/2.%20Search_in_BST.cpp)
+- ### [Searching in BST:](/Binary%20Search%20Tree/Basics/2.Search_in_BST.cpp)
 
   - To search for a key in BST, we need to follow the following steps:
     - Start from the root node and compare the key of the current node with the key to be searched.
@@ -53,7 +53,7 @@
 
 ## Moderate
 
-- ### [Check if a binary tree is a BST or not:](/Binary%20Search%20Tree/Basics/5.%20Check_Tree_Is_BST.cpp)
+- ### [Check if a binary tree is a BST or not:](/Binary%20Search%20Tree/Basics/5.Check_Tree_Is_BST.cpp)
 
   - To check if a binary tree is a BST or not, we need to follow the following steps:
     - Traverse the tree in inorder fashion and store the elements in an array.
@@ -68,6 +68,6 @@
     - Find the index of the first element which is greater than the value of the first element of the preorder traversal array and let it be **i**.
     - Recursively call the function for the left and right subtree , for left start+1 and end=i-1 and for right start=i and end=end.
 
-## [Balanced BST](/Binary%20Search%20Tree/Advanced/4.%20Balance_a_BST.cpp)
+## [Balanced BST](/Binary%20Search%20Tree/Advanced/4.Balance_a_BST.cpp)
 
 **A Balanced Binary Search Tree is a binary search tree in which the depth of the left and right subtree of any node differ by not more than 1.**

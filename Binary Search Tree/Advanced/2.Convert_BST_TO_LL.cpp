@@ -46,9 +46,17 @@ void flattenRec(Node *root, Node *&prev)
     if (root == NULL)
         return;
     flattenRec(root->left, prev);
-    root->right = prev;
-    root->left = NULL;
-    prev = root;
+    if (prev == NULL)
+    {
+        prev = root;
+        prev->left = NULL;
+    }
+    else
+    {
+        prev->right = root;
+        prev->left = NULL;
+        prev = prev->right;
+    }
     flattenRec(root->right, prev);
 }
 // Flattening using recursion
@@ -79,6 +87,7 @@ int main()
 
     // Flattening using vector method
     Node *head = flatten(root);
+    cout << "Flattened BST using vector method: ";
     while (head != NULL)
     {
         cout << head->data << " ";
@@ -94,6 +103,7 @@ int main()
     root2->left->left->left = new Node(2);
     root2->left->left->left->left = new Node(1);
     // Flattening using recursion method
+    cout << "Flattened BST using recursion method: ";
     root2 = flatten2(root2);
     while (root2 != NULL)
     {
