@@ -79,7 +79,8 @@ vector<int> maxSlidingWindow(vector<int> &nums, int k)
     vector<int> result;
     deque<int> dq;
     // First run a for loop from 0 to min(k, n) and store the index of the elements in the deque.
-    // Store the index of the elements in the deque in decreasing order from front to back, so that the front of the deque will have the maximum element of the window.
+    // Store the index of the elements in the deque in decreasing order from front to back while going ahead in index because any element that is smaller than element at
+    // index ith and lies before index i there is no use for it becuase it was taken out from the window before ith element, so that the front of the deque will have the maximum element of the window.
     for (int i = 0; i < min(k, (int)nums.size()); i++)
     {
         while (!dq.empty() && nums[dq.back()] < nums[i])

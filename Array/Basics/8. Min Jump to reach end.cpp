@@ -6,6 +6,13 @@ Time Complexity : O(n)
 Space Complexity : O(1)
 */
 
+/*
+Things to take care is of some edge cases
+1st Edge Case : if there is only stone which is starting aswell as end stone return 0.
+2nd initialisation of ans = 1, because if starting and ending stone are not same then there is one jump from 0 to 1-range becuas
+the for loop starts from prev+1 to range
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -15,18 +22,12 @@ int minJumps(int arr[], int n)
     int prev = 1;
     int ans = 1;
     if (n == 1)
-    {
         return 0;
-    }
-    while (1)
+    while (range < n - 1)
     {
         if (prev > range)
         {
             return -1;
-        }
-        else if (range >= n - 1)
-        {
-            return ans;
         }
         else
         {
@@ -40,5 +41,5 @@ int minJumps(int arr[], int n)
             range = temp;
         }
     }
-    return -1;
+    return ans;
 }

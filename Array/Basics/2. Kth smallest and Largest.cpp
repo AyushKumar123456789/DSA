@@ -4,7 +4,7 @@
 using namespace std;
 
 /*
-1. Approack : Sorting Time Complexity : O(NlogN)
+1. Approach : Sorting Time Complexity : O(NlogN)
 2. Approach : Use Priority Queue Time Complexity: O(NlogK)
 3. Approach : Use Pivot/Quick Sort , worst-case time complexity of this method is O(n^2) but its Average time complexity is O(n)
 */

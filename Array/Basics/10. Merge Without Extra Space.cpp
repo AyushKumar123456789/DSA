@@ -3,6 +3,9 @@
 /*
 Time Complexity : O((N+M)(log(N+M)))
 Space Complexity : O(1)
+
+arr1 contain smaller elements
+arr2 contain larger elements
 */
 
 #include <bits/stdc++.h>

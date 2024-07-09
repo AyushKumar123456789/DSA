@@ -34,6 +34,9 @@ Floyd's Cylce Method : Tortouis and rabbit method
 
 If there is repeated number then only cycle will form.
 
+remember to use do while loop , because in starting fast == slow.
+
+
 */
 
 int findDuplicate(vector<int> &nums)

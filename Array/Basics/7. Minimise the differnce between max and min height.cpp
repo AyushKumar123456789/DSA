@@ -5,6 +5,9 @@ GOOD QUESTION : Add k upto index i and decrese K from index i+1 to n-1
 LOGIC : https://www.geeksforgeeks.org/minimize-the-maximum-difference-between-the-heights/
 */
 
+// The idea is to increase the first i towers by k and decrease the rest tower by k after sorting the heights, then calculate the maximum height difference.
+// This can be achieved using sorting.
+
 #include <bits/stdc++.h>
 using namespace std;
 

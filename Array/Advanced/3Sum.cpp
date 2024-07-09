@@ -40,9 +40,9 @@ vector<vector<int>> threeSum_brute(vector<int> &nums, int val)
 
 /*
 Approach 2 :
-Hash Table Use , put element of between index i and j in hash table & check
-Time Complexity : O(N^2 * log(M)) M is max size of triplets
-Space Complexity : O(N) + O(M) + O(M)
+        Hash Table Use , put element of between index i and j in hash table & check
+        Time Complexity : O(N^2 * log(M)) M is max size of triplets
+        Space Complexity : O(N) + O(M) + O(M)
 
 */
 

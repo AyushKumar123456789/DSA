@@ -37,6 +37,10 @@ int findLongestConseqSubseq(int arr[], int N)
 /*
 Time Complexity : O(N)
 Space Complexity : O(1)
+
+Logic :
+1. Run a for loop on every element of array and check if this element can become the last element of consecutive values this can be done by checking if(freq[arr[i]+1])==0.
+2. Then run backward from it and find the max length of consecutive elements.
 */
 
 int findLongestConseqSubseq(int arr[], int N)

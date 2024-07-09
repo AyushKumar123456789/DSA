@@ -30,6 +30,8 @@ public:
 /*
 Logic : From end find the first digit from end where , number is greater then agae wala number and then reverse the arr from there to end and SO on
 Dkhlo easy logic hai likhne k mann nhi hai
+
+45165184132 -> 45165184213
 */
 
 class Solution
