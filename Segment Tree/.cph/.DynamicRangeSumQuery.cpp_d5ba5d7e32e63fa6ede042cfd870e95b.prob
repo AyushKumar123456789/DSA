@@ -1,0 +1,1 @@
+{"name":"Local: DynamicRangeSumQuery","url":"e:\\DSA\\Segment Tree\\DynamicRangeSumQuery.cpp","tests":[{"id":1720678115619,"input":"8 4\n3 2 4 5 1 1 5 3\n2 1 4\n2 5 6\n1 3 1\n2 1 4\n","output":"14\n2\n11"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\DSA\\Segment Tree\\DynamicRangeSumQuery.cpp","group":"local","local":true}
