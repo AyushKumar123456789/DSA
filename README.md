@@ -35,3 +35,4 @@ layout:
 - [Binary Search Tree](/Binary%20Search%20Tree/BST_Notes.md)
 - [Heap](Heap/Heap_Notes.md)
 - [Fenwick Tree](/Femwick%20Tree/FemwickTreeNotes.md)
+- [Segment Tree](/Segment%20Tree/SegmentTree.md)
