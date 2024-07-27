@@ -22,13 +22,16 @@ void build(int id, int l, int r) {
 }
 
 int query(int id, int l, int r, int x, int y) {
+    //if total overlap return the value
     if (x <= l && r <= y) {
         return tree[id];
     }
+    //if no overlap return 0
     if (r < x || y < l) {
         return 0;
     }
     int m = (l + r) / 2;
+    //if partial overlap go down
     return query(id * 2, l, m, x, y) + query(id * 2 + 1, m + 1, r, x, y);
 }
 
@@ -46,3 +49,19 @@ void update(int id, int l, int r, int pos, int val) {
     tree[id] = tree[id * 2] + tree[id * 2 + 1];
 }
 ```
+
+## Range Update Query :
+
+### Range update query means updateing the values of array of a given range. We use the concept of **Lazy Propagation** to update the values of a given range.
+
+In Lazy propagation we create onther tree intitialising its value to 0, called lazy tree. Which stores that the node of segement tree is need to be updated or not. So whenver we calculate the sum or udating the segment tree we check if lazy tree has some values or not, if lazy[idx] != 0 then we update the value of segement tree and check if the child of that segment tree exists or not by checking (l==h) or not. If it is not then we update the childs the lazy tree and return .
+
+So, basically we dont update all value of segment tree at once, we update the value of segment tree when we need it.
+
+[Segment Tree with Lazy Propagation](/Segment%20Tree/Range_Update_Query_Lazy_Propagation.cpp)
+
+## 2D Prefix Sum :
+
+### 2D Prefix sum pre[i][j] stores the sum of all elements in rectangle whose top left corner is (0,0) and bottom right corner is (i,j).
+
+[2D Prefix Sum Question Forest Queries CSES](/Segment%20Tree/Forest_Queries.cpp)
