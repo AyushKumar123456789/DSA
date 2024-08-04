@@ -5,7 +5,7 @@ Logic : Read above aritcal
 
 Sperate traversal for left, bottam and right boundary.
 
-!!!!!!! Some IMPORTANT :  left_node and right_node function dont push root node, root node is pushed at the begining if it is not going to pushed be bottom function
+!!!!!!! Some IMPORTANT :  left_node and right_node function dont push root node, root node is pushed at the begining if it is not going to pushed by bottom function
 */
 
 bool leaf(Node *root)

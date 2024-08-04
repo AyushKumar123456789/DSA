@@ -2,8 +2,8 @@
 
 /*
 Logic :
-1. Start with root and traverse for size of queue right now under the while(!Q.emtpy())
-2. Put left of nodes in quese and datat of node in ans vector and keep moving right , and do this for size of that queus
+1. Start with root and traverse for size of queue , under the while(!Q.emtpy())
+2. Put left of nodes in queue and datat of node in ans vector and keep moving right , and do this for size of that queus
 */
 
 // GFG

@@ -67,3 +67,4 @@ int minSwaps(vector<int> &A, int n)
         }
     }
     return ans;
+}

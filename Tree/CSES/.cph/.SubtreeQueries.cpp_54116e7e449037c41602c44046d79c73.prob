@@ -1,0 +1,1 @@
+{"name":"Local: SubtreeQueries","url":"e:\\DSA\\Tree\\CSES\\SubtreeQueries.cpp","tests":[{"id":1722669542417,"input":"5 3\n4 2 5 2 1\n1 2\n1 3\n3 4\n3 5\n2 3\n1 5 3\n2 3","output":"8\n10"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\DSA\\Tree\\CSES\\SubtreeQueries.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: TreeDistance1","url":"e:\\DSA\\Tree\\CSES\\TreeDistance1.cpp","tests":[{"id":1722333879339,"input":"5\n1 2\n1 3\n3 4\n3 5","output":"2 3 2 3 3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\DSA\\Tree\\CSES\\TreeDistance1.cpp","group":"local","local":true}

@@ -50,7 +50,7 @@ int height(Node *root, int &ans)
 int diameter(Node *root)
 {
     int ans = 0;
-    int ht = height(root, ans);
+    int ht = height(root, ans); // Return part is only used in function
     return ans;
 }
 

@@ -1,0 +1,1 @@
+{"name":"Local: PathQueries","url":"e:\\DSA\\Tree\\CSES\\PathQueries.cpp","tests":[{"id":1722677229191,"input":"5 3\n4 2 5 2 1\n1 2\n1 3\n3 4\n3 5\n2 4\n1 3 2\n2 4","output":"11\n8"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\DSA\\Tree\\CSES\\PathQueries.cpp","group":"local","local":true}
