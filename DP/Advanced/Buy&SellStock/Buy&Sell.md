@@ -8,7 +8,7 @@
 
 ## 4. Buy and Sell Stock IV -> At most k transactions are allowed. [Code](/DP/Advanced/Buy&SellStock/Buy&Sell4.cpp)
 
-## 5. Buy and Sell Stock with Cooldown -> At most 1 transaction is allowed with a cooldown period of one day means you can't sell at index i and buy again at index i+1, but you can make as many transaction as possible. [Code](/DP/Advanced/Buy&SellStock/Buy&Sell5.cpp)
+## 5. Buy and Sell Stock with Cooldown -> At most 1 transaction is allowed with a cooldown period of one day means you can't sell at index i and buy again at index i+1, but you can make as many transaction as possible. [Code](/DP/Advanced/Buy&SellStock/Buy&SellCoolDown.cpp)
 
 ## 6. Buy ans Sell Stock with transaction fee [Code](/DP/Advanced/Buy&SellStock/Buy&SellWithTransactionFee.cpp)
 
