@@ -2,7 +2,7 @@
 
 ## 1. Buy and Sell Stock I -> Only 1 transaction is allowed. [Code](/DP/Advanced/Buy&SellStock/Buy&Sell1.cpp)
 
-## 2. Buy and Sell Stock II -> Infinite transactions are allowed. [Code](/DP/Advanced/Buy&SellStock/Buy&Sell2.cpp)
+## 2. Buy and Sell Stock II -> Infinite transactions are allowed. [Code](/DP/Advanced/Buy&SellStock/BuyAndSell2.cpp)
 
 ## 3. Buy and Sell Stock III -> At most 2 transactions are allowed. [Code](/DP/Advanced/Buy&SellStock/Buy&Sell3.cpp)
 
