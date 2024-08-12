@@ -46,7 +46,7 @@ vector<long long> nextLargerElement(vector<long long> arr, int n)
     return ans;
 }
 
-vector<int> help_classmate(vector<int> arr, int n)
+vector<int> next_smaller(vector<int> arr, int n)
 {
     vector<int> ans(n);
     stack<int> st;
