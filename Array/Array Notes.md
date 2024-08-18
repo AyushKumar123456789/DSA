@@ -4,7 +4,7 @@
 - [Selection Sort](#selection-sort)
 - [Insertion Sort](#insertion-sort)
 - [Merge Sort](#merge-sort)
-- [Quick Sort](#quick-sort)
+- [Quick Sort/Pivot Sort](#quick-sort)
 - [Heap Sort](#heap-sort)
 - [Counting Sort](#counting-sort)
 - [Radix Sort](#radix-sort)

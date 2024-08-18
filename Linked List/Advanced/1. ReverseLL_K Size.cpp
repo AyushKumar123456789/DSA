@@ -115,7 +115,7 @@ Node *reverse_k_Ierative(Node *head, int k)
             idx++;
         }
 
-        // If newHead is not set, set it to the head of the new reversed list
+        // If this is first set of reverse nodes , set newHead
         if (newHead == NULL)
         {
             newHead = prev;

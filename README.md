@@ -27,13 +27,13 @@ layout:
 - [Array](array/README.md)
   - [SORTING ALGORITHMS](<Array/Array Notes.md>)
 - [DP](dp/README.md)
-
   - [Notes](DP/DP%20Notes.md)
   - [Advanced](DP/Advanced/README.md)
     - [Buy and Sell Stock](DP/Advanced/Buy%26SellStock/Buy%26Sell.md)
     - [3D DP](/DP/Advanced/3D%20DP/)
     - [Subssquence](/DP/Advanced/Subsequence/Subsequence.md)
-
+- [Linked List](/Linked%20List/LL%20Notes.md)
+  - [Ultra Pro Max](/Linked%20List/Advanced/UltraProMax/UltraProMax.md)
 - [Graph](graph/GraphNotes.md)
   - [GraphNotes](Graph/GraphNotes.md)
 - [Seive of Eratosthenes :](<Number Theory/Number Theory.md>)
