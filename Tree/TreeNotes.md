@@ -13,7 +13,7 @@
     - Then find the farthest node from the farthest node.
     - The distance between the two farthest nodes is the diameter of the tree.
 
-## [Tree ReRooting](/Tree/CSES/Tree_Diameter.cpp)
+## [Tree ReRooting](/Tree/CSES/TreeDistance2.cpp)
 
 It is a technique to solve the problem , For example we have a tree and we have to find the maximum sum of the path from every node to every other node in the tree.
 So, Here we can use the tree ReRooting technique to solve this problem in O(n) time complexity , instead of solving for every node we solve for the one node considering it as the root and then just make the other node as root for calculating for that node in O(1) time complexity.
