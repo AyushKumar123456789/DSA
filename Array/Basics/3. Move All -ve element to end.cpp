@@ -1,7 +1,5 @@
-
 /*
 Extra Space Use Hoga , Time Complexity: O(N) , Space Complexity: O(N)
-
 */
 
 void segregateElements(int arr[], int n)

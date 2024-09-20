@@ -20,7 +20,8 @@ So, Here we can use the tree ReRooting technique to solve this problem in O(n) t
 
 ## Binary Lifting
 
-It is a pre processing technique, In preprocessing, we initialize the ancestor[][] table, such that ancestor[i][j] stores the jth ancestor of node i.
+It is a pre processing technique, In preprocessing, we calculate the 2^jth ancestor of every node for all j from 0 to log(n) where n is the number of nodes in the tree.
+So ancestor[i][j] will store the 2^jth ancestor of node i.
 
 - Initially, we set all the cells of ancestor[][] table = -1.
 - Run a DFS to initialize the immediate parent, that is we initialize ancestor[i][0] for all the nodes.

@@ -16,8 +16,12 @@ void dfs0(ll node, ll par, vector<vector<ll>> &graph, vector<ll> &dp, vector<ll>
         if (child == par)
             continue;
         dfs0(child, node, graph, dp, sz);
-        sz[node] += sz[child];
-        dp[node] += dp[child] + sz[child];
+        sz[node] += sz[child];             // sz will store the number of nodes in the subtree rooted at the current node
+        dp[node] += dp[child] + sz[child]; // dp will store the sum of distances of all nodes from the current node
+        /*
+            dp[node]+=dp[child]+sz[child] because the distance of all nodes from the current node me ,
+            dp[child] main one add krenge utne bar jitne node uske child ke subtree main hai.
+        */
     }
 }
 

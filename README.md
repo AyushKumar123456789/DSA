@@ -44,4 +44,4 @@ layout:
 - [Segment Tree](/Segment%20Tree/SegmentTree.md)
 - [Tree](/Tree/TreeNotes.md)
 
-### [About Me](/AboutMe.md)
+### [Author](/AboutMe.md)

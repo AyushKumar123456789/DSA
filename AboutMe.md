@@ -2,9 +2,11 @@
 
 # About Me
 
-I am a student at the Indian Institute of Technology (Indian School of Mines), Dhanbad, studying Computer Science. I am passionate about software development and am always looking for ways to improve my skills. I am currently working on a project that involves creating a library of data structures and algorithms in C++.
+I am a student at the Indian Institute of Technology (Indian School of Mines), Dhanbad, studying Computer Science. I am passionate about technology and enjoy learning new things.I am also interested in machine learning and artificial intelligence. I believe that technology has the power to change the world and am excited to be a part of that change.
 
-I am also interested in machine learning and artificial intelligence and am looking to learn more about these fields in the future. I am always open to new opportunities and am excited to see where my career takes me.
+_My believe :_
+
+> \_"Everything around you that you call life was made up by people that were no smarter than you. And you can change it, you can influence it… Once you learn that, you’ll never be the same again."\_ - Steve Jobs
 
 In my free time, I enjoy playing video games, reading, and spending time with friends. I am always looking for new ways to challenge myself and grow as a person.
 

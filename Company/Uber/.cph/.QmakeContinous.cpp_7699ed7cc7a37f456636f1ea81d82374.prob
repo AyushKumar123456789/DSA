@@ -1,0 +1,1 @@
+{"name":"Local: QmakeContinous","url":"e:\\DSA\\Company\\Uber\\QmakeContinous.cpp","tests":[{"id":1725012749441,"input":"5\n6 4 5 7 8","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\DSA\\Company\\Uber\\QmakeContinous.cpp","group":"local","local":true}

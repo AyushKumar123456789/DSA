@@ -40,8 +40,8 @@ void rearrange(int arr[], int n)
 
 /*
 LOGIC :
-1. If the current element is negative and the index is even, then we need to find the next positive element and right rotate the array by one
-2. If the current element is positive and the index is odd, then we need to find the next negative element and right rotate the array by one
+1. If the current element is negative and the index is even, then we need to find the next positive element and right rotate the array by one.
+2. If the current element is positive and the index is odd, then we need to find the next negative element and right rotate the array by one.
 
 Time Complexity: O(n^2)
 Space Complexity: O(1)

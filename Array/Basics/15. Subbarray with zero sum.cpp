@@ -13,17 +13,17 @@ using namespace std;
 
 bool subArrayExists(int arr[], int n)
 {
-    unordered_map<int, int> val;
+    unordered_map<int, int> freq;
     int total = 0;
-    val[0] = 1;
+    freq[0] = 1;
     for (int i = 0; i < n; i++)
     {
         total += arr[i];
-        if (val[total] != 0)
+        if (freq[total] > 0)
         {
             return 1;
         }
-        val[total] = 1;
+        freq[total]++;
     }
     return 0;
 }
